@@ -1,0 +1,410 @@
+/* Root variables for color scheme */
+:root {
+  --text: #e9ecefff;
+  --text-sec: #adb5bdff;
+  --but-border: #646e77;
+  --but-bg: #495057ff;
+  --sec-border: #545d64;
+  --sec-bg: #343a40ff;
+  --bg: #212529;
+  --danger: #f44336;
+  --danger-hover: #d32f2f;
+  --warning: #f9a825;
+  --success: #1b5e20;
+  --add: #4caf50;
+  --remove: #f44336;
+  --info: #0d47a1;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  background-color: var(--sec-bg);
+}
+
+a {
+  color: var(--add);
+  text-decoration: none;
+}
+
+th {
+  color: var(--text);
+  cursor: pointer;
+}
+
+th:hover {
+  background-color: var(--but-bg);
+}
+
+/* Table row styles */
+tr {
+  border-radius: 8px;
+  overflow: hidden;
+  height: fit-content;
+}
+
+tr th:first-child, tr td:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+tr th:last-child, tr td:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Form and input styles */
+.add-quote {
+  margin-bottom: 10px;
+  background-color: var(--sec-bg);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.add-quote form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+input, select, button {
+  background-color: var(--but-bg);
+  border: 1px solid var(--but-border);
+  color: var(--text);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+/* Button styles */
+button {
+  cursor: pointer;
+  background-color: var(--add);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  white-space: nowrap;
+}
+
+button:hover {
+  background-color: var(--add);
+}
+
+.remove-btn {
+  background-color: var(--remove);
+}
+
+.remove-btn:hover {
+  background-color: var(--danger-hover);
+}
+
+/* Status dropdown styles */
+.status-dropdown {
+  padding: 5px;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.status-Quote-Signed { background-color: var(--danger); }
+.status-In-Production { background-color: var(--warning); color: #000000; }
+.status-Finished { background-color: var(--success); }
+.status-Picked-Up { background-color: var(--info); }
+.status-Shipped { background-color: #4a148c; }
+.status-Delivered { background-color: var(--add); }
+
+/* Due date styles */
+.due-date-green, .due-date-yellow, .due-date-red, .due-date-overdue {
+  border-radius: 8px;
+  padding: 6px;
+  width: fit-content;
+  text-align: center;
+  font-size: 14px;
+  margin: 0;
+}
+
+.due-date-green { background-color: var(--success); color: var(--text); }
+.due-date-yellow { background-color: var(--warning); color: #000000; }
+.due-date-red, .due-date-overdue { background-color: var(--danger); color: white; }
+
+/* Tag styles */
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  margin: 2px;
+  border-radius: 12px;
+  background-color: var(--but-bg);
+  color: var(--text-sec);
+  font-size: 12px;
+}
+
+.tag-remove {
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.tag-input {
+  background-color: var(--but-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 4px;
+  border-radius: 16px;
+  width: 100px;
+}
+
+.tag-add-btn {
+  background-color: var(--but-bg);
+  color: var(--text-sec);
+  border: none;
+  padding: 2px 6px 0 6px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+#tags {
+  height: 50px;
+  overflow-y: auto;
+  background-color: var(--but-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+#tags option {
+  padding: 4px;
+}
+
+#tags option:checked {
+  background-color: var(--add);
+  color: var(--text);
+}
+
+/* Popup styles */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: var(--sec-bg);
+  margin: 15% auto;
+  padding: 30px;
+  border: 1px solid var(--sec-border);
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  text-align: left;
+  overflow-wrap: break-word;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.popup-content h2 {
+  color: var(--text);
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.popup-content p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.popup-content button {
+  margin: 0;
+  padding: 10px 20px;
+  min-width: 120px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+#confirmDelete {
+  background-color: var(--remove);
+}
+
+#confirmDelete:hover {
+  background-color: var(--danger-hover);
+}
+
+#cancelDelete {
+  background-color: var(--but-bg);
+}
+
+#cancelDelete:hover {
+  background-color: var(--text-sec);
+  color: var(--bg);
+}
+
+/* Quote details styles */
+#quoteDetailsPopup, #missingFieldsPopup {
+  display: none;
+}
+
+#quoteDetailsPopup > div, #missingFieldsPopup > div {
+  margin: 0 auto;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Missing fields form styles */
+.missing-fields-form input,
+.missing-fields-form select {
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--but-border);
+  background-color: var(--but-bg);
+  color: var(--text);
+  font-size: 16px;
+}
+
+.update-all-btn {
+  background-color: var(--add);
+  color: var(--text);
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  margin: 20px 0 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.update-all-btn:hover {
+  background-color: var(--success);
+}
+
+/* Scrollbar styles for popup content */
+.popup-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.popup-content::-webkit-scrollbar-track {
+  background: var(--bg);
+  border-radius: 5px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+  background: var(--but-bg);
+  border-radius: 5px;
+}
+
+.popup-content::-webkit-scrollbar-thumb:hover {
+  background: var(--but-border);
+}
+
+/* For Firefox */
+.popup-content {
+  scrollbar-width: thin;
+  scrollbar-color: var(--but-bg) var(--bg);
+}
+
+
+/* Quote details popup styles */
+#quoteDetailsPopup {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#quoteDetailsPopup .popup-content {
+  background-color: var(--sec-bg);
+  padding: 20px;
+  border: 1px solid var(--sec-border);
+  width: 80%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  color: var(--text);
+}
+
+body.popup-open {
+  overflow: hidden;
+}
+
+#quoteDetailsPopup h2 {
+  color: var(--text);
+  margin-top: 0;
+}
+
+#quoteDetailsPopup p {
+  margin: 10px 0;
+}
+
+#quoteDetailsPopup a {
+  color: var(--add);
+  text-decoration: none;
+}
+
+#quoteDetailsPopup a:hover {
+  text-decoration: underline;
+}
+
+/* Tag input styles */
+#addTag {
+  background-color: var(--but-bg);
+  color: var(--text);
+  border: var(--but-border) 1px solid;
+  padding: 2px 7px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0 14px 14px 0;
+  margin: 0;
+}
+
+#newTag {
+  background-color: var(--but-bg);  
+  color: var(--text);
+  border: var(--but-border) 1px solid;
+  padding: 2px 7px;
+  font-size: 16px;
+  border-radius: 14px 0 0 14px;
+  margin: 0;
+}
