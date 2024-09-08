@@ -217,7 +217,7 @@ button:hover {
   margin: 15% auto;
   padding: 30px;
   border: 1px solid var(--sec-border);
-  width: 90%;
+  width: fit-content;
   max-width: 500px;
   border-radius: 12px;
   text-align: left;
@@ -246,7 +246,7 @@ button:hover {
 }
 
 .popup-content button {
-  margin: 0;
+  margin: 15px 15px 0 15px;
   padding: 10px 20px;
   min-width: 120px;
   font-size: 16px;
@@ -357,7 +357,7 @@ button:hover {
   background-color: var(--sec-bg);
   padding: 20px;
   border: 1px solid var(--sec-border);
-  width: 80%;
+  width: fit-content;
   max-width: 600px;
   max-height: 80vh;
   overflow-y: auto;
